@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="usuarioGrupo">
+      <h2 data-cy="usuarioGrupoDetailsHeading">
+        <span jhiTranslate="riskcomplianceloginserviceApp.usuarioGrupo.detail.title">Usuario Grupo</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ usuarioGrupo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioGrupo.idnVarUsuarioCadastrado">Idn Var Usuario Cadastrado</span></dt>
+        <dd>
+          <span>{{ usuarioGrupo.idnVarUsuarioCadastrado }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioGrupo.idnVarGrupo">Idn Var Grupo</span></dt>
+        <dd>
+          <span>{{ usuarioGrupo.idnVarGrupo }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioGrupo.idnVarUsuario">Idn Var Usuario</span></dt>
+        <dd>
+          <span>{{ usuarioGrupo.idnVarUsuario }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioGrupo.grupo">Grupo</span></dt>
+        <dd>
+          <div *ngIf="usuarioGrupo.grupo">
+            <a [routerLink]="['/grupo', usuarioGrupo.grupo?.id, 'view']">{{ usuarioGrupo.grupo?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioGrupo.usuario">Usuario</span></dt>
+        <dd>
+          <div *ngIf="usuarioGrupo.usuario">
+            <a [routerLink]="['/usuario', usuarioGrupo.usuario?.id, 'view']">{{ usuarioGrupo.usuario?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/usuario-grupo', usuarioGrupo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

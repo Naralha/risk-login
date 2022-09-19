@@ -1,0 +1,32 @@
+{
+  "riskcomplianceloginserviceApp": {
+    "papel": {
+      "home": {
+        "title": "Papels",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Papel",
+        "createOrEditLabel": "Create or edit a Papel",
+        "notFound": "No Papels found"
+      },
+      "created": "A new Papel is created with identifier {{ param }}",
+      "updated": "A Papel is updated with identifier {{ param }}",
+      "deleted": "A Papel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Papel {{ id }}?"
+      },
+      "detail": {
+        "title": "Papel"
+      },
+      "id": "ID",
+      "idnVarPapel": "Idn Var Papel",
+      "nVarNome": "N Var Nome",
+      "idnVarApp": "Idn Var App",
+      "idnVarUsuario": "Idn Var Usuario",
+      "grupoPapel": "Grupo Papel",
+      "permissionsPapel": "Permissions Papel",
+      "usuarioPapel": "Usuario Papel",
+      "app": "App",
+      "usuario": "Usuario"
+    }
+  }
+}

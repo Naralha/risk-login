@@ -1,0 +1,123 @@
+application {
+  config {
+    baseName riskcomplianceloginservice
+    packageName io.sld.riskcomplianceloginservice
+    applicationType gateway
+    authenticationType jwt
+    prodDatabaseType mssql
+    buildTool maven
+  }
+
+  entities *
+}
+
+relationship OneToMany {
+	App     to AppEmpresa
+    App     to Features
+    App		to Papel
+    Grupo   to GrupoPapel
+    Papel   to GrupoPapel
+    Papel   to PermissionsPapel
+    Papel   to UsuarioPapel
+    Permissions to PermissionsPapel
+    Features to PermissionsPapel
+    Grupo   to UsuarioGrupo 
+    Empresa to GrupoPapel
+	Empresa to Usuario
+    Empresa to Grupo
+    Empresa to GrupoPapel
+    Empresa to App
+    Empresa to AppEmpresa
+    Usuario to App
+    Usuario to AppEmpresa
+    Usuario to Features
+    Usuario to Grupo
+    Usuario to GrupoPapel
+    Usuario to Permissions
+    Usuario to PermissionsPapel
+    Usuario to Papel
+    Usuario to UsuarioGrupo
+    Usuario to UsuarioPapel
+	
+}
+
+entity Empresa{
+	idnVarEmpresa String required,
+	nVarNome String required,
+	nVarDescricao String 
+}
+
+entity Usuario{
+	idnVarUsuario String required,
+	nVarNome String required,
+	idnVarEmpresa String,
+	idnVarUsuarioCadastro String ,
+	nVarSenha String required
+}
+
+entity Grupo{
+	idnVarGrupo String required,
+	nVarNome String required,
+	idnVarUsuario String required,
+	idnVarEmpresa String required
+}
+
+entity GrupoPapel {
+	idnVarGrupo String required,
+	idnVarPapel String required,
+	idnVarUsuario String required,
+	idnVarEmpresa String required
+    }
+    
+entity App {
+	idnVarApp String required,
+	nVarNome String required,
+	idnVarUsuario String required,
+	idnVarEmpresa String required
+    }
+    
+entity AppEmpresa{	
+	idnVarApp  String required,
+	idnVarEmpresa  String required,
+	idnVarUsuario  String required
+    }
+    
+entity Features{	
+	idnVarFeatures String required,
+	nVarNome String required,
+	idnVarApp String required,
+	idnVarUsuario String required
+    }
+
+entity Permissions {
+	idnVarPermissions String required,
+	nVarNome String required,
+	nVarTipoPermissao String required,
+	idnVarUsuario String required
+}
+
+entity PermissionsPapel {
+	idnVarPermissions String required,
+	idnVarPapel String required,
+	idnVarFeatures String required,
+	idnVarUsuario String required
+}
+
+entity Papel {
+	idnVarPapel String required,
+	nVarNome String required,
+	idnVarApp String required,
+	idnVarUsuario String required
+}
+
+entity UsuarioGrupo {
+	idnVarUsuarioCadastrado String required,
+	idnVarGrupo String required,
+	idnVarUsuario String required
+}
+
+entity UsuarioPapel {
+	idnVarUsuarioCadastrado String required,
+	idnVarPapel String required,
+	idnVarUsuario String required
+}

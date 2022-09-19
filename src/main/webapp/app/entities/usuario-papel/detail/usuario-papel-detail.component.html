@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="usuarioPapel">
+      <h2 data-cy="usuarioPapelDetailsHeading">
+        <span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.detail.title">Usuario Papel</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ usuarioPapel.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.idnVarUsuarioCadastrado">Idn Var Usuario Cadastrado</span></dt>
+        <dd>
+          <span>{{ usuarioPapel.idnVarUsuarioCadastrado }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.idnVarPapel">Idn Var Papel</span></dt>
+        <dd>
+          <span>{{ usuarioPapel.idnVarPapel }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.idnVarUsuario">Idn Var Usuario</span></dt>
+        <dd>
+          <span>{{ usuarioPapel.idnVarUsuario }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.papel">Papel</span></dt>
+        <dd>
+          <div *ngIf="usuarioPapel.papel">
+            <a [routerLink]="['/papel', usuarioPapel.papel?.id, 'view']">{{ usuarioPapel.papel?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.usuario">Usuario</span></dt>
+        <dd>
+          <div *ngIf="usuarioPapel.usuario">
+            <a [routerLink]="['/usuario', usuarioPapel.usuario?.id, 'view']">{{ usuarioPapel.usuario?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/usuario-papel', usuarioPapel.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "riskcomplianceloginserviceApp": {
+    "permissionsPapel": {
+      "home": {
+        "title": "Permissions Papels",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Permissions Papel",
+        "createOrEditLabel": "Create or edit a Permissions Papel",
+        "notFound": "No Permissions Papels found"
+      },
+      "created": "A new Permissions Papel is created with identifier {{ param }}",
+      "updated": "A Permissions Papel is updated with identifier {{ param }}",
+      "deleted": "A Permissions Papel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Permissions Papel {{ id }}?"
+      },
+      "detail": {
+        "title": "Permissions Papel"
+      },
+      "id": "ID",
+      "idnVarPermissions": "Idn Var Permissions",
+      "idnVarPapel": "Idn Var Papel",
+      "idnVarFeatures": "Idn Var Features",
+      "idnVarUsuario": "Idn Var Usuario",
+      "papel": "Papel",
+      "permissions": "Permissions",
+      "features": "Features",
+      "usuario": "Usuario"
+    }
+  }
+}
