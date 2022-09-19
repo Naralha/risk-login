@@ -1,0 +1,108 @@
+<div>
+  <h2 id="page-heading" data-cy="GrupoPapelHeading">
+    <span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.home.title">Grupo Papels</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-grupo-papel"
+        [routerLink]="['/grupo-papel/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.home.createLabel"> Create a new Grupo Papel </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="grupoPapels?.length === 0">
+    <span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.home.notFound">No grupoPapels found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="grupoPapels && grupoPapels.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.idnVarGrupo">Idn Var Grupo</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.idnVarPapel">Idn Var Papel</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.idnVarUsuario">Idn Var Usuario</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.idnVarEmpresa">Idn Var Empresa</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.grupo">Grupo</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.papel">Papel</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.empresa">Empresa</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.grupoPapel.usuario">Usuario</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let grupoPapel of grupoPapels; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/grupo-papel', grupoPapel.id, 'view']">{{ grupoPapel.id }}</a>
+          </td>
+          <td>{{ grupoPapel.idnVarGrupo }}</td>
+          <td>{{ grupoPapel.idnVarPapel }}</td>
+          <td>{{ grupoPapel.idnVarUsuario }}</td>
+          <td>{{ grupoPapel.idnVarEmpresa }}</td>
+          <td>
+            <div *ngIf="grupoPapel.grupo">
+              <a [routerLink]="['/grupo', grupoPapel.grupo?.id, 'view']">{{ grupoPapel.grupo?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="grupoPapel.papel">
+              <a [routerLink]="['/papel', grupoPapel.papel?.id, 'view']">{{ grupoPapel.papel?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="grupoPapel.empresa">
+              <a [routerLink]="['/empresa', grupoPapel.empresa?.id, 'view']">{{ grupoPapel.empresa?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="grupoPapel.usuario">
+              <a [routerLink]="['/usuario', grupoPapel.usuario?.id, 'view']">{{ grupoPapel.usuario?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/grupo-papel', grupoPapel.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/grupo-papel', grupoPapel.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(grupoPapel)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

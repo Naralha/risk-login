@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="permissionsPapel">
+      <h2 data-cy="permissionsPapelDetailsHeading">
+        <span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.detail.title">Permissions Papel</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ permissionsPapel.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.idnVarPermissions">Idn Var Permissions</span></dt>
+        <dd>
+          <span>{{ permissionsPapel.idnVarPermissions }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.idnVarPapel">Idn Var Papel</span></dt>
+        <dd>
+          <span>{{ permissionsPapel.idnVarPapel }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.idnVarFeatures">Idn Var Features</span></dt>
+        <dd>
+          <span>{{ permissionsPapel.idnVarFeatures }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.idnVarUsuario">Idn Var Usuario</span></dt>
+        <dd>
+          <span>{{ permissionsPapel.idnVarUsuario }}</span>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.papel">Papel</span></dt>
+        <dd>
+          <div *ngIf="permissionsPapel.papel">
+            <a [routerLink]="['/papel', permissionsPapel.papel?.id, 'view']">{{ permissionsPapel.papel?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.permissions">Permissions</span></dt>
+        <dd>
+          <div *ngIf="permissionsPapel.permissions">
+            <a [routerLink]="['/permissions', permissionsPapel.permissions?.id, 'view']">{{ permissionsPapel.permissions?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.features">Features</span></dt>
+        <dd>
+          <div *ngIf="permissionsPapel.features">
+            <a [routerLink]="['/features', permissionsPapel.features?.id, 'view']">{{ permissionsPapel.features?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="riskcomplianceloginserviceApp.permissionsPapel.usuario">Usuario</span></dt>
+        <dd>
+          <div *ngIf="permissionsPapel.usuario">
+            <a [routerLink]="['/usuario', permissionsPapel.usuario?.id, 'view']">{{ permissionsPapel.usuario?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/permissions-papel', permissionsPapel.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

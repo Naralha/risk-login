@@ -1,0 +1,137 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-usuario-heading"
+        data-cy="UsuarioCreateUpdateHeading"
+        jhiTranslate="riskcomplianceloginserviceApp.usuario.home.createOrEditLabel"
+      >
+        Create or edit a Usuario
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="riskcomplianceloginserviceApp.usuario.idnVarUsuario" for="field_idnVarUsuario"
+            >Idn Var Usuario</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="idnVarUsuario"
+            id="field_idnVarUsuario"
+            data-cy="idnVarUsuario"
+            formControlName="idnVarUsuario"
+          />
+          <div
+            *ngIf="
+              editForm.get('idnVarUsuario')!.invalid && (editForm.get('idnVarUsuario')!.dirty || editForm.get('idnVarUsuario')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('idnVarUsuario')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="riskcomplianceloginserviceApp.usuario.nVarNome" for="field_nVarNome">N Var Nome</label>
+          <input type="text" class="form-control" name="nVarNome" id="field_nVarNome" data-cy="nVarNome" formControlName="nVarNome" />
+          <div *ngIf="editForm.get('nVarNome')!.invalid && (editForm.get('nVarNome')!.dirty || editForm.get('nVarNome')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nVarNome')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="riskcomplianceloginserviceApp.usuario.idnVarEmpresa" for="field_idnVarEmpresa"
+            >Idn Var Empresa</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="idnVarEmpresa"
+            id="field_idnVarEmpresa"
+            data-cy="idnVarEmpresa"
+            formControlName="idnVarEmpresa"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="riskcomplianceloginserviceApp.usuario.idnVarUsuarioCadastro"
+            for="field_idnVarUsuarioCadastro"
+            >Idn Var Usuario Cadastro</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="idnVarUsuarioCadastro"
+            id="field_idnVarUsuarioCadastro"
+            data-cy="idnVarUsuarioCadastro"
+            formControlName="idnVarUsuarioCadastro"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="riskcomplianceloginserviceApp.usuario.nVarSenha" for="field_nVarSenha">N Var Senha</label>
+          <input type="text" class="form-control" name="nVarSenha" id="field_nVarSenha" data-cy="nVarSenha" formControlName="nVarSenha" />
+          <div *ngIf="editForm.get('nVarSenha')!.invalid && (editForm.get('nVarSenha')!.dirty || editForm.get('nVarSenha')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('nVarSenha')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="riskcomplianceloginserviceApp.usuario.empresa" for="field_empresa">Empresa</label>
+          <select class="form-control" id="field_empresa" data-cy="empresa" name="empresa" formControlName="empresa">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="empresaOption.id === editForm.get('empresa')!.value?.id ? editForm.get('empresa')!.value : empresaOption"
+              *ngFor="let empresaOption of empresasSharedCollection; trackBy: trackEmpresaById"
+            >
+              {{ empresaOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

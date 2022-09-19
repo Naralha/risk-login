@@ -1,0 +1,31 @@
+{
+  "riskcomplianceloginserviceApp": {
+    "grupo": {
+      "home": {
+        "title": "Grupos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Grupo",
+        "createOrEditLabel": "Create or edit a Grupo",
+        "notFound": "No Grupos found"
+      },
+      "created": "A new Grupo is created with identifier {{ param }}",
+      "updated": "A Grupo is updated with identifier {{ param }}",
+      "deleted": "A Grupo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Grupo {{ id }}?"
+      },
+      "detail": {
+        "title": "Grupo"
+      },
+      "id": "ID",
+      "idnVarGrupo": "Idn Var Grupo",
+      "nVarNome": "N Var Nome",
+      "idnVarUsuario": "Idn Var Usuario",
+      "idnVarEmpresa": "Idn Var Empresa",
+      "grupoPapel": "Grupo Papel",
+      "usuarioGrupo": "Usuario Grupo",
+      "empresa": "Empresa",
+      "usuario": "Usuario"
+    }
+  }
+}

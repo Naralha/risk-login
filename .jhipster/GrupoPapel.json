@@ -1,0 +1,62 @@
+{
+  "applications": ["riskcomplianceloginservice"],
+  "changelogDate": "20220918011152",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "grupo_papel",
+  "fields": [
+    {
+      "fieldName": "idnVarGrupo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "idnVarPapel",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "idnVarUsuario",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "idnVarEmpresa",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "GrupoPapel",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "grupo",
+      "otherEntityRelationshipName": "grupoPapel",
+      "relationshipName": "grupo",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "papel",
+      "otherEntityRelationshipName": "grupoPapel",
+      "relationshipName": "papel",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "empresa",
+      "otherEntityRelationshipName": "grupoPapel",
+      "relationshipName": "empresa",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "grupoPapel",
+      "relationshipName": "usuario",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

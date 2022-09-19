@@ -1,0 +1,29 @@
+{
+  "riskcomplianceloginserviceApp": {
+    "appEmpresa": {
+      "home": {
+        "title": "App Empresas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new App Empresa",
+        "createOrEditLabel": "Create or edit a App Empresa",
+        "notFound": "No App Empresas found"
+      },
+      "created": "A new App Empresa is created with identifier {{ param }}",
+      "updated": "A App Empresa is updated with identifier {{ param }}",
+      "deleted": "A App Empresa is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete App Empresa {{ id }}?"
+      },
+      "detail": {
+        "title": "App Empresa"
+      },
+      "id": "ID",
+      "idnVarApp": "Idn Var App",
+      "idnVarEmpresa": "Idn Var Empresa",
+      "idnVarUsuario": "Idn Var Usuario",
+      "app": "App",
+      "empresa": "Empresa",
+      "usuario": "Usuario"
+    }
+  }
+}

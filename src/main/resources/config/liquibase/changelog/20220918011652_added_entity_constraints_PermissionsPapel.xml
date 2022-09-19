@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity PermissionsPapel.
+    -->
+    <changeSet id="20220918011652-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="papel_id"
+                                 baseTableName="permissions_papel"
+                                 constraintName="fk_permissions_papel__papel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="papel"/>
+
+        <addForeignKeyConstraint baseColumnNames="permissions_id"
+                                 baseTableName="permissions_papel"
+                                 constraintName="fk_permissions_papel__permissions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="permissions"/>
+
+        <addForeignKeyConstraint baseColumnNames="features_id"
+                                 baseTableName="permissions_papel"
+                                 constraintName="fk_permissions_papel__features_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="features"/>
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="permissions_papel"
+                                 constraintName="fk_permissions_papel__usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="usuario"/>
+    </changeSet>
+</databaseChangeLog>

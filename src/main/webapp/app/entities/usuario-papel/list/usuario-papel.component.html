@@ -1,0 +1,96 @@
+<div>
+  <h2 id="page-heading" data-cy="UsuarioPapelHeading">
+    <span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.home.title">Usuario Papels</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-usuario-papel"
+        [routerLink]="['/usuario-papel/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.home.createLabel"> Create a new Usuario Papel </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="usuarioPapels?.length === 0">
+    <span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.home.notFound">No usuarioPapels found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="usuarioPapels && usuarioPapels.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col">
+            <span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.idnVarUsuarioCadastrado">Idn Var Usuario Cadastrado</span>
+          </th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.idnVarPapel">Idn Var Papel</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.idnVarUsuario">Idn Var Usuario</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.papel">Papel</span></th>
+          <th scope="col"><span jhiTranslate="riskcomplianceloginserviceApp.usuarioPapel.usuario">Usuario</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuarioPapel of usuarioPapels; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/usuario-papel', usuarioPapel.id, 'view']">{{ usuarioPapel.id }}</a>
+          </td>
+          <td>{{ usuarioPapel.idnVarUsuarioCadastrado }}</td>
+          <td>{{ usuarioPapel.idnVarPapel }}</td>
+          <td>{{ usuarioPapel.idnVarUsuario }}</td>
+          <td>
+            <div *ngIf="usuarioPapel.papel">
+              <a [routerLink]="['/papel', usuarioPapel.papel?.id, 'view']">{{ usuarioPapel.papel?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="usuarioPapel.usuario">
+              <a [routerLink]="['/usuario', usuarioPapel.usuario?.id, 'view']">{{ usuarioPapel.usuario?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/usuario-papel', usuarioPapel.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/usuario-papel', usuarioPapel.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(usuarioPapel)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
