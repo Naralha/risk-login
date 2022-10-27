@@ -1,7 +1,5 @@
 package io.sld.riskcomplianceloginservice;
 
-import io.sld.riskcomplianceloginservice.config.ApplicationProperties;
-import io.sld.riskcomplianceloginservice.config.CRLFLogConverter;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;

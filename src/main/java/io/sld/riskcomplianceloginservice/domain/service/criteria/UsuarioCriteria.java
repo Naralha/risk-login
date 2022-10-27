@@ -4,13 +4,14 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import io.sld.riskcomplianceloginservice.domain.entity.Usuario;
+import io.sld.riskcomplianceloginservice.resource.UsuarioResource;
 import org.springdoc.api.annotations.ParameterObject;
 import tech.jhipster.service.Criteria;
 import tech.jhipster.service.filter.*;
 
 /**
  * Criteria class for the {@link Usuario} entity. This class is used
- * in {@link io.sld.riskcomplianceloginservice.web.rest.UsuarioResource} to receive all the possible filtering options from
+ * in {@link UsuarioResource} to receive all the possible filtering options from
  * the Http GET request parameters.
  * For example the following could be a valid request:
  * {@code /usuarios?id.greaterThan=5&attr1.contains=something&attr2.specified=false}

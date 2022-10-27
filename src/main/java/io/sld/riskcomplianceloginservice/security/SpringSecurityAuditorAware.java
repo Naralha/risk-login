@@ -1,6 +1,5 @@
 package io.sld.riskcomplianceloginservice.security;
 
-import io.sld.riskcomplianceloginservice.config.Constants;
 import java.util.Optional;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;

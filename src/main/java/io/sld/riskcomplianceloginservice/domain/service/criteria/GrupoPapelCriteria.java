@@ -4,13 +4,14 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import io.sld.riskcomplianceloginservice.domain.entity.GrupoPapel;
+import io.sld.riskcomplianceloginservice.resource.GrupoPapelResource;
 import org.springdoc.api.annotations.ParameterObject;
 import tech.jhipster.service.Criteria;
 import tech.jhipster.service.filter.*;
 
 /**
  * Criteria class for the {@link GrupoPapel} entity. This class is used
- * in {@link io.sld.riskcomplianceloginservice.web.rest.GrupoPapelResource} to receive all the possible filtering options from
+ * in {@link GrupoPapelResource} to receive all the possible filtering options from
  * the Http GET request parameters.
  * For example the following could be a valid request:
  * {@code /grupo-papels?id.greaterThan=5&attr1.contains=something&attr2.specified=false}
