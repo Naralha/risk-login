@@ -4,20 +4,13 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import io.sld.riskcomplianceloginservice.domain.entity.PermissionsPapel;
+import io.sld.riskcomplianceloginservice.domain.service.filter.LongFilter;
+import io.sld.riskcomplianceloginservice.domain.service.filter.StringFilter;
 import io.sld.riskcomplianceloginservice.resource.PermissionsPapelResource;
 import org.springdoc.api.annotations.ParameterObject;
-import tech.jhipster.service.Criteria;
-import tech.jhipster.service.filter.*;
 
-/**
- * Criteria class for the {@link PermissionsPapel} entity. This class is used
- * in {@link PermissionsPapelResource} to receive all the possible filtering options from
- * the Http GET request parameters.
- * For example the following could be a valid request:
- * {@code /permissions-papels?id.greaterThan=5&attr1.contains=something&attr2.specified=false}
- * As Spring is unable to properly convert the types, unless specific {@link Filter} class are used, we need to use
- * fix type specific filters.
- */
+
+
 @ParameterObject
 @SuppressWarnings("common-java:DuplicatedBlocks")
 public class PermissionsPapelCriteria implements Serializable, Criteria {

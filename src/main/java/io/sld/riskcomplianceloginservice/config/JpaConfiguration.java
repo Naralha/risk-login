@@ -11,9 +11,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@EntityScan("io.sld.riskcomplianceservice.domain.entity")
+@EntityScan("io.sld.riskcomplianceloginservice.domain.entity")
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
-@EnableJpaRepositories("io.sld.riskcomplianceservice.domain.repository")
+@EnableJpaRepositories("io.sld.riskcomplianceloginservice.domain.repository")
 public class JpaConfiguration {
 
 }

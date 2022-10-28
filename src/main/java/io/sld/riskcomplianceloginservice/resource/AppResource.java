@@ -14,6 +14,10 @@ import java.util.Objects;
 import java.util.Optional;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+
+import io.sld.riskcomplianceloginservice.resource.utils.HeaderUtil;
+import io.sld.riskcomplianceloginservice.resource.utils.PaginationUtil;
+import io.sld.riskcomplianceloginservice.resource.utils.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,9 +27,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import tech.jhipster.web.util.HeaderUtil;
-import tech.jhipster.web.util.PaginationUtil;
-import tech.jhipster.web.util.ResponseUtil;
+
 
 /**
  * REST controller for managing {@link App}.
@@ -38,7 +40,7 @@ public class AppResource {
 
     private static final String ENTITY_NAME = "riskcomplianceloginserviceApp";
 
-    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final AppService appService;

@@ -23,9 +23,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import tech.jhipster.web.util.HeaderUtil;
-import tech.jhipster.web.util.PaginationUtil;
-import tech.jhipster.web.util.ResponseUtil;
+import io.sld.riskcomplianceloginservice.resource.utils.HeaderUtil;
+import io.sld.riskcomplianceloginservice.resource.utils.PaginationUtil;
+import io.sld.riskcomplianceloginservice.resource.utils.ResponseUtil;
 
 /**
  * REST controller for managing {@link Usuario}.
@@ -38,7 +38,7 @@ public class UsuarioResource {
 
     private static final String ENTITY_NAME = "riskcomplianceloginserviceUsuario";
 
-    @Value("${jhipster.clientApp.name}")
+    @Value("${spring.application.name}")
     private String applicationName;
 
     private final UsuarioService usuarioService;

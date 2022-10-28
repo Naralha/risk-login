@@ -1,6 +1,6 @@
 package io.sld.riskcomplianceloginservice.domain.service;
 
-import io.sld.riskcomplianceloginservice.domain.entity.AppEmpresa;
+import io.sld.riskcomplianceloginservice.domain.entity.*;
 import io.sld.riskcomplianceloginservice.domain.repository.AppEmpresaRepository;
 import io.sld.riskcomplianceloginservice.domain.service.criteria.AppEmpresaCriteria;
 import io.sld.riskcomplianceloginservice.domain.service.dto.AppEmpresaDTO;
@@ -14,7 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tech.jhipster.service.QueryService;
+
 
 /**
  * Service for executing complex queries for {@link AppEmpresa} entities in the database.

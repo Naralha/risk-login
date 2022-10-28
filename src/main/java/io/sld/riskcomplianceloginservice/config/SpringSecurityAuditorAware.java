@@ -2,7 +2,7 @@ package io.sld.riskcomplianceloginservice.config;
 
 import java.util.Optional;
 
-import io.sld.riskcomplianceservice.constants.HttpHeaderConstants;
+import io.sld.riskcomplianceloginservice.constants.HttpHeaderConstants;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;

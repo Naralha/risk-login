@@ -1,6 +1,9 @@
 package io.sld.riskcomplianceloginservice.domain.service;
 
 import io.sld.riskcomplianceloginservice.domain.entity.Permissions;
+import io.sld.riskcomplianceloginservice.domain.entity.PermissionsPapel_;
+import io.sld.riskcomplianceloginservice.domain.entity.Permissions_;
+import io.sld.riskcomplianceloginservice.domain.entity.Usuario_;
 import io.sld.riskcomplianceloginservice.domain.repository.PermissionsRepository;
 import io.sld.riskcomplianceloginservice.domain.service.criteria.PermissionsCriteria;
 import io.sld.riskcomplianceloginservice.domain.service.dto.PermissionsDTO;
@@ -14,7 +17,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tech.jhipster.service.QueryService;
+
 
 /**
  * Service for executing complex queries for {@link Permissions} entities in the database.

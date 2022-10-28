@@ -1,6 +1,6 @@
 package io.sld.riskcomplianceloginservice.domain.service;
 
-import io.sld.riskcomplianceloginservice.domain.entity.Grupo;
+import io.sld.riskcomplianceloginservice.domain.entity.*;
 import io.sld.riskcomplianceloginservice.domain.repository.GrupoRepository;
 import io.sld.riskcomplianceloginservice.domain.service.criteria.GrupoCriteria;
 import io.sld.riskcomplianceloginservice.domain.service.dto.GrupoDTO;
@@ -14,7 +14,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tech.jhipster.service.QueryService;
 
 /**
  * Service for executing complex queries for {@link Grupo} entities in the database.

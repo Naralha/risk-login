@@ -1,7 +1,7 @@
 package io.sld.riskcomplianceloginservice.config;
 
 
-import io.sld.riskcomplianceservice.property.SwaggerProperties;
+import io.sld.riskcomplianceloginservice.property.SwaggerProperties;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
