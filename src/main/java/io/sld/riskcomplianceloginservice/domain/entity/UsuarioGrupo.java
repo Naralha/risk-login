@@ -37,7 +37,8 @@ public class UsuarioGrupo implements Serializable {
     private String idnVarUsuario;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "grupoPapels", "usuarioGrupos", "empresa", "usuario" }, allowSetters = true)
+//    @JsonIgnoreProperties(value = { "grupoPapels", "usuarioGrupos", "empresa", "usuario" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "usuarioGrupos", "empresa", "usuario" }, allowSetters = true)
     private Grupo grupo;
 
     @ManyToOne

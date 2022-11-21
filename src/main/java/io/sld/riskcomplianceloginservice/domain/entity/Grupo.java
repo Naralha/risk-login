@@ -44,7 +44,8 @@ public class Grupo implements Serializable {
 
     @OneToMany(mappedBy = "grupo")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "grupo", "papel", "empresa", "usuario" }, allowSetters = true)
+//    @JsonIgnoreProperties(value = { "grupo", "papel", "empresa", "usuario" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "grupo", "empresa", "usuario" }, allowSetters = true)
     private Set<GrupoPapel> grupoPapels = new HashSet<>();
 
     @OneToMany(mappedBy = "grupo")

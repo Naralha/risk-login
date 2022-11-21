@@ -45,7 +45,8 @@ public class GrupoPapel implements Serializable {
     private Grupo grupo;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "grupoPapels", "permissionsPapels", "usuarioPapels", "app", "usuario" }, allowSetters = true)
+//    @JsonIgnoreProperties(value = { "grupoPapels", "permissionsPapels", "usuarioPapels", "app", "usuario" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "grupoPapels",  "usuarioPapels", "app", "usuario" }, allowSetters = true)
     private Papel papel;
 
     @ManyToOne

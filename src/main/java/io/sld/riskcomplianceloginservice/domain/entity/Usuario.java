@@ -86,7 +86,8 @@ public class Usuario implements Serializable {
 
     @OneToMany(mappedBy = "usuario")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "grupo", "usuario" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "usuario" }, allowSetters = true)
+//    @JsonIgnoreProperties(value = { "grupo", "usuario" }, allowSetters = true)
     private Set<UsuarioGrupo> usuarioGrupos = new HashSet<>();
 
     @OneToMany(mappedBy = "usuario")

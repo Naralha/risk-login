@@ -49,7 +49,8 @@ public class Papel implements Serializable {
 
     @OneToMany(mappedBy = "papel")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "papel", "permissions", "features", "usuario" }, allowSetters = true)
+//    @JsonIgnoreProperties(value = { "papel", "permissions", "features", "usuario" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "papel", "usuario" }, allowSetters = true)
     private Set<PermissionsPapel> permissionsPapels = new HashSet<>();
 
     @OneToMany(mappedBy = "papel")
