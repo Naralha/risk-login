@@ -42,5 +42,7 @@ swagger:
   external-documentation:
   external-documentation-url:
 
+secret : somerandomsecret
+
 
 
