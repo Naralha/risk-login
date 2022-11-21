@@ -1,5 +1,6 @@
 package io.sld.riskcomplianceloginservice.resource;
 
+import io.sld.riskcomplianceloginservice.constants.LoginFake;
 import io.sld.riskcomplianceloginservice.domain.entity.Usuario;
 import io.sld.riskcomplianceloginservice.domain.repository.UsuarioRepository;
 import io.sld.riskcomplianceloginservice.domain.service.UsuarioQueryService;
@@ -179,11 +180,17 @@ public class UsuarioResource {
      * @param id the id of the usuarioDTO to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the usuarioDTO, or with status {@code 404 (Not Found)}.
      */
+//    @GetMapping("/usuarios/{id}")
+//    public ResponseEntity<UsuarioDTO> getUsuario(@PathVariable Long id) {
+//        log.debug("REST request to get Usuario : {}", id);
+//        Optional<UsuarioDTO> usuarioDTO = usuarioService.findOne(id);
+//        return ResponseUtil.wrapOrNotFound(usuarioDTO);
+//    }
+
     @GetMapping("/usuarios/{id}")
-    public ResponseEntity<UsuarioDTO> getUsuario(@PathVariable Long id) {
+    public ResponseEntity<Usuario> getUsuario(@PathVariable Long id) {
         log.debug("REST request to get Usuario : {}", id);
-        Optional<UsuarioDTO> usuarioDTO = usuarioService.findOne(id);
-        return ResponseUtil.wrapOrNotFound(usuarioDTO);
+       return ResponseUtil.wrapOrNotFound(LoginFake.criarEstruturaFake());
     }
 
     /**
