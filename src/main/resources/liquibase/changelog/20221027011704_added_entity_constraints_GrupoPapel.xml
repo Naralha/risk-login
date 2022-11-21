@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity GrupoPapel.
+    -->
+    <changeSet id="20221027011704-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="grupo_id"
+                                 baseTableName="grupo_papel"
+                                 constraintName="fk_grupo_papel__grupo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="grupo"/>
+
+        <addForeignKeyConstraint baseColumnNames="papel_id"
+                                 baseTableName="grupo_papel"
+                                 constraintName="fk_grupo_papel__papel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="papel"/>
+
+        <addForeignKeyConstraint baseColumnNames="empresa_id"
+                                 baseTableName="grupo_papel"
+                                 constraintName="fk_grupo_papel__empresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresa"/>
+
+        <addForeignKeyConstraint baseColumnNames="usuario_id"
+                                 baseTableName="grupo_papel"
+                                 constraintName="fk_grupo_papel__usuario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="usuario"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="floatType" value="float4" dbms="h2"/>
+    <property name="uuidType" value="uuid" dbms="h2"/>
+    <property name="datetimeType" value="datetime" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="h2"/>
+    <property name="blobType" value="blob" dbms="h2"/>
+    <property name="now" value="GETDATE()" dbms="mssql"/>
+    <property name="floatType" value="float" dbms="mssql"/>
+    <property name="clobType" value="clob" dbms="mssql"/>
+    <property name="blobType" value="blob" dbms="mssql"/>
+    <property name="uuidType" value="uuid" dbms="mssql"/>
+    <property name="datetimeType" value="datetime" dbms="mssql"/>
+
+    <include file="liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011404_added_entity_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011504_added_entity_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011604_added_entity_Grupo.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011704_added_entity_GrupoPapel.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011804_added_entity_App.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011904_added_entity_AppEmpresa.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012004_added_entity_Features.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012104_added_entity_Permissions.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012204_added_entity_PermissionsPapel.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012304_added_entity_Papel.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012404_added_entity_UsuarioGrupo.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012504_added_entity_UsuarioPapel.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="liquibase/changelog/20221027011504_added_entity_constraints_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011604_added_entity_constraints_Grupo.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011704_added_entity_constraints_GrupoPapel.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011804_added_entity_constraints_App.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027011904_added_entity_constraints_AppEmpresa.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012004_added_entity_constraints_Features.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012104_added_entity_constraints_Permissions.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012204_added_entity_constraints_PermissionsPapel.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012304_added_entity_constraints_Papel.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012404_added_entity_constraints_UsuarioGrupo.xml" relativeToChangelogFile="false"/>
+    <include file="liquibase/changelog/20221027012504_added_entity_constraints_UsuarioPapel.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>
