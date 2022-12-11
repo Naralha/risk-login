@@ -4,6 +4,7 @@ import io.jsonwebtoken.ExpiredJwtException;
 import io.sld.riskcomplianceloginservice.config.jwt.JwtUserDetailsService;
 import io.sld.riskcomplianceloginservice.config.jwt.TokenManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
+//@Order(Integer.MIN_VALUE)
 public class JwtFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUserDetailsService userDetailsService;
@@ -31,6 +33,11 @@ public class JwtFilter extends OncePerRequestFilter {
         String tokenHeader = request.getHeader("Authorization");
         String username = null;
         String token = null;
+        String path = request.getRequestURI();
+        if("/login".equals(path)){
+            filterChain.doFilter(request, response);
+            return;
+        }
         if (tokenHeader != null && tokenHeader.startsWith("Bearer ")) {
             token = tokenHeader.substring(7);
             try {
@@ -42,6 +49,7 @@ public class JwtFilter extends OncePerRequestFilter {
             }
         } else {
             System.out.println("Bearer String not found in token");
+            throw new ServletException("Bearer String not found in token");
         }
         if (null != username && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
