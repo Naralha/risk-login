@@ -17,7 +17,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>RiskLoginService</name>
-    <description>Description for riskloginservice</description>
+    <description>Description for riskloginservices</description>
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
