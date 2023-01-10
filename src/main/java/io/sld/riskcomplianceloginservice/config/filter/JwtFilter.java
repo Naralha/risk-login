@@ -3,6 +3,7 @@ package io.sld.riskcomplianceloginservice.config.filter;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.sld.riskcomplianceloginservice.config.jwt.JwtUserDetailsService;
 import io.sld.riskcomplianceloginservice.config.jwt.TokenManager;
+import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -43,12 +44,15 @@ public class JwtFilter extends OncePerRequestFilter {
             try {
                 username = tokenManager.getUsernameFromToken(token);
             } catch (IllegalArgumentException e) {
+                response.sendError(HttpStatus.SC_UNAUTHORIZED, "Unable to get JWT Token");
                 System.out.println("Unable to get JWT Token");
             } catch (ExpiredJwtException e) {
+                response.sendError(HttpStatus.SC_UNAUTHORIZED, "JWT Token has expired");
                 System.out.println("JWT Token has expired");
             }
         } else {
             System.out.println("Bearer String not found in token");
+            response.sendError(HttpStatus.SC_UNAUTHORIZED, "Bearer String not found in token");
             throw new ServletException("Bearer String not found in token");
         }
         if (null != username && SecurityContextHolder.getContext().getAuthentication() == null) {
